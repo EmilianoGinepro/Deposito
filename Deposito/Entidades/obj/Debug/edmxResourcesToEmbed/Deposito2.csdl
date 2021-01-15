@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Deposito2" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Deposito2Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorias" EntityType="Deposito2.Categoria" />
+    <EntitySet Name="Productos" EntityType="Deposito2.Producto" />
+    <AssociationSet Name="CategoriaProducto" Association="Deposito2.CategoriaProducto">
+      <End Role="Categoria" EntitySet="Categorias" />
+      <End Role="Producto" EntitySet="Productos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rubro" Type="String" Nullable="false" />
+    <NavigationProperty Name="Producto" Relationship="Deposito2.CategoriaProducto" FromRole="Categoria" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" />
+    <Property Name="Material" Type="String" Nullable="false" />
+    <Property Name="Medida" Type="String" Nullable="false" />
+    <Property Name="Stock" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Categoria" Relationship="Deposito2.CategoriaProducto" FromRole="Producto" ToRole="Categoria" />
+    <Property Name="CategoriaId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="CategoriaProducto">
+    <End Type="Deposito2.Categoria" Role="Categoria" Multiplicity="1" />
+    <End Type="Deposito2.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="CategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
