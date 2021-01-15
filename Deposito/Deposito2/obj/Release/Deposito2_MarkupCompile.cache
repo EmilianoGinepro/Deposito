@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Git\Ginepro-Portfolio\Deposito\Deposito2\obj\Debug\
+D:\Git\Ginepro-Portfolio\Deposito\Deposito2\obj\Release\
 Deposito2
 none
 false
-DEBUG;TRACE
+TRACE
 D:\Git\Ginepro-Portfolio\Deposito\Deposito2\App.xaml
 3445005710
 
 7883366940
-19529499537
+19-372185439
 Categoria.xaml;Inicio.xaml;Producto.xaml;
 
 True
