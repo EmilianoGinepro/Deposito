@@ -1,0 +1,47 @@
+﻿<Window x:Class="Deposito2.Producto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Deposito2"
+        mc:Ignorable="d"
+        Title="ProductoVentana" Height="420.379" Width="1070.333">
+    <Grid Loaded="Grid_Loaded" Margin="0,0,-106,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="681*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid SelectionChanged="dgProdcutos_SelectionChanged"
+            Name="dgProdcutos"
+            AutoGenerateColumns="True"
+            Margin="17,31,121,167"  Grid.ColumnSpan="4"/>
+        <Button x:Name="btnNuevo" Click="BotonesProductos" Content="NUEVO" HorizontalAlignment="Left" Margin="17,261,0,0" VerticalAlignment="Top" Width="133"  Grid.ColumnSpan="4"/>
+        <Button x:Name="btnModificar" Click="BotonesProductos" Content="MODIFICAR" HorizontalAlignment="Left" Margin="51,261,0,0" VerticalAlignment="Top" Width="123" Grid.Column="3" />
+        <Button x:Name="btnBorrar" Click="BotonesProductos" Content="BORRAR" HorizontalAlignment="Left" Margin="179,261,0,0" VerticalAlignment="Top" Width="135" Grid.Column="3"/>
+        <Button x:Name="btnCerrar" Click="BotonesProductos" Content="CERRAR" HorizontalAlignment="Left" Margin="409,261,0,0" VerticalAlignment="Top" Width="153"  Grid.Column="3"/>
+        <TextBox x:Name="txtID"  Text="{Binding Path=Id}" HorizontalAlignment="Left" Height="23" Margin="22,233,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="38" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtNombre"   Text="{Binding Path=Nombre}" HorizontalAlignment="Left" Height="23" Margin="17,233,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="137" Grid.ColumnSpan="3" Grid.Column="1"/>
+        <TextBox x:Name="txtMaterial"  Text="{Binding Path=Material}" HorizontalAlignment="Left" Height="23" Margin="113,233,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="90" Grid.Column="3"/>
+        <TextBox x:Name="txtMedida"  Text="{Binding Path=Medida}" HorizontalAlignment="Left" Height="23" Margin="222,233,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="55" Grid.Column="3"/>
+        <TextBox x:Name="txtStock"  Text="{Binding Path=Stock}" HorizontalAlignment="Left" Height="23" Margin="295,233,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="55" Grid.Column="3"/>
+        <ComboBox Name="ComboBoxRubros" Margin="370,233,547,118" Grid.Column="3" ItemsSource="{Binding NombreRubros}" DisplayMemberPath="{Binding NombreRubros}" SelectedValuePath="{Binding IdRubros}"  SelectedItem="{Binding IdRubros}" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding NombreRubros}" FontSize="10"  ></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
+        <Label x:Name="labelStock" Content="Stock" HorizontalAlignment="Left" Margin="295,204,0,0" VerticalAlignment="Top" Width="55" Grid.Column="3"/>
+        <Label x:Name="labelMedida" Content="Medida" HorizontalAlignment="Left" Margin="222,204,0,0" VerticalAlignment="Top" Width="55" Grid.Column="3"/>
+        <Label x:Name="labelMaterial" Content="Material" HorizontalAlignment="Left" Margin="113,202,0,0" VerticalAlignment="Top" Width="61" Grid.Column="3"/>
+        <Label x:Name="labelProdcuto" Content="Productos" HorizontalAlignment="Left" Margin="17,5,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Width="138"/>
+        <Label x:Name="labelNombre" Content="Nombre" HorizontalAlignment="Left" Margin="17,202,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="55" Grid.Column="1"/>
+        <Label x:Name="labelCategoria" Content="Categoria" HorizontalAlignment="Left" Margin="370,202,0,0" VerticalAlignment="Top" Width="138" Grid.Column="3"/>
+        
+    </Grid>
+</Window>
