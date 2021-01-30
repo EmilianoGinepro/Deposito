@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="Deposito2.Categoria" Width="1.5" PointX="0.5" PointY="0.5" />
         <EntityTypeShape EntityType="Deposito2.Producto" Width="1.5" PointX="5.75" PointY="0.5" />
         <AssociationConnector Association="Deposito2.CategoriaProducto" />
+        <EntityTypeShape EntityType="Deposito2.Login" Width="1.5" PointX="0.5" PointY="2.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

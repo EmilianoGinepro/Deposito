@@ -34,3 +34,4 @@ D:\proyecto practica deposito\deposito02\DepositoVisual\obj\Debug\netcoreapp3.1\
 D:\proyecto practica deposito\deposito02\DepositoVisual\obj\Debug\netcoreapp3.1\DepositoVisual.Ventana_Producto.resources
 D:\proyecto practica deposito\deposito02\DepositoVisual\bin\Debug\netcoreapp3.1\DepositoVisual.dll.config
 D:\proyecto practica deposito\deposito02\DepositoVisual\obj\Debug\netcoreapp3.1\DepositoVisual.Ventana_Categoria.resources
+D:\proyecto practica deposito\deposito02\DepositoVisual\obj\Debug\netcoreapp3.1\DepositoVisual.Login.resources

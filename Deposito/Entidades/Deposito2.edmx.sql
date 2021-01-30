@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/30/2020 10:59:33
+-- Date Created: 01/30/2021 16:21:24
 -- Generated from EDMX file: D:\proyecto practica deposito\deposito02\Entidades\Deposito2.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,20 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_CategoriaProducto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Productos] DROP CONSTRAINT [FK_CategoriaProducto];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Categorias]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Categorias];
+GO
+IF OBJECT_ID(N'[dbo].[Productos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Productos];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -45,6 +54,14 @@ CREATE TABLE [dbo].[Productos] (
 );
 GO
 
+-- Creating table 'LoginSet'
+CREATE TABLE [dbo].[LoginSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Usuario] nvarchar(max)  NOT NULL,
+    [Clave] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -58,6 +75,12 @@ GO
 -- Creating primary key on [Id] in table 'Productos'
 ALTER TABLE [dbo].[Productos]
 ADD CONSTRAINT [PK_Productos]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'LoginSet'
+ALTER TABLE [dbo].[LoginSet]
+ADD CONSTRAINT [PK_LoginSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

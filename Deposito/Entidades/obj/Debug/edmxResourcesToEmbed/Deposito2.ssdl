@@ -3,6 +3,7 @@
   <EntityContainer Name="Deposito2StoreContainer">
     <EntitySet Name="Categorias" EntityType="Deposito2.Store.Categorias" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Productos" EntityType="Deposito2.Store.Productos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoginSet" EntityType="Deposito2.Store.LoginSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="CategoriaProducto" Association="Deposito2.Store.CategoriaProducto">
       <End Role="Categoria" EntitySet="Categorias" />
       <End Role="Producto" EntitySet="Productos" />
@@ -25,6 +26,14 @@
     <Property Name="Medida" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Stock" Type="int" Nullable="false" />
     <Property Name="CategoriaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoginSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Clave" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="CategoriaProducto">
     <End Role="Categoria" Type="Deposito2.Store.Categorias" Multiplicity="1" />

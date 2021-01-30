@@ -7,13 +7,14 @@
       <End Role="Categoria" EntitySet="Categorias" />
       <End Role="Producto" EntitySet="Productos" />
     </AssociationSet>
+    <EntitySet Name="LoginSet" EntityType="Deposito2.Login" />
   </EntityContainer>
   <EntityType Name="Categoria">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Rubro" Type="String" Nullable="false" />
+    <Property Name="Rubro" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Producto" Relationship="Deposito2.CategoriaProducto" FromRole="Categoria" ToRole="Producto" />
   </EntityType>
   <EntityType Name="Producto">
@@ -21,9 +22,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre" Type="String" Nullable="false" />
-    <Property Name="Material" Type="String" Nullable="false" />
-    <Property Name="Medida" Type="String" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Material" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Medida" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Stock" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Categoria" Relationship="Deposito2.CategoriaProducto" FromRole="Producto" ToRole="Categoria" />
     <Property Name="CategoriaId" Type="Int32" Nullable="false" />
@@ -40,4 +41,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario" Type="String" Nullable="false" />
+    <Property Name="Clave" Type="String" Nullable="false" />
+  </EntityType>
 </Schema>

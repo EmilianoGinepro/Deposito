@@ -1080,11 +1080,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\Ginepro-Portfolio\\Deposito\\DepositoVisual\\DepositoVisual.csproj",
+      "projectUniqueName": "D:\\proyecto practica deposito\\deposito02\\DepositoVisual\\DepositoVisual.csproj",
       "projectName": "DepositoVisual",
-      "projectPath": "D:\\Git\\Ginepro-Portfolio\\Deposito\\DepositoVisual\\DepositoVisual.csproj",
+      "projectPath": "D:\\proyecto practica deposito\\deposito02\\DepositoVisual\\DepositoVisual.csproj",
       "packagesPath": "C:\\Users\\Emiliano\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\Ginepro-Portfolio\\Deposito\\DepositoVisual\\obj\\",
+      "outputPath": "D:\\proyecto practica deposito\\deposito02\\DepositoVisual\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1104,14 +1104,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Git\\Ginepro-Portfolio\\Deposito\\Datos\\Datos.csproj": {
-              "projectPath": "D:\\Git\\Ginepro-Portfolio\\Deposito\\Datos\\Datos.csproj"
+            "D:\\proyecto practica deposito\\deposito02\\Datos\\Datos.csproj": {
+              "projectPath": "D:\\proyecto practica deposito\\deposito02\\Datos\\Datos.csproj"
             },
-            "D:\\Git\\Ginepro-Portfolio\\Deposito\\Entidades\\Entidades.csproj": {
-              "projectPath": "D:\\Git\\Ginepro-Portfolio\\Deposito\\Entidades\\Entidades.csproj"
+            "D:\\proyecto practica deposito\\deposito02\\Entidades\\Entidades.csproj": {
+              "projectPath": "D:\\proyecto practica deposito\\deposito02\\Entidades\\Entidades.csproj"
             },
-            "D:\\Git\\Ginepro-Portfolio\\Deposito\\Logica\\Logica.csproj": {
-              "projectPath": "D:\\Git\\Ginepro-Portfolio\\Deposito\\Logica\\Logica.csproj"
+            "D:\\proyecto practica deposito\\deposito02\\Logica\\Logica.csproj": {
+              "projectPath": "D:\\proyecto practica deposito\\deposito02\\Logica\\Logica.csproj"
             }
           }
         }

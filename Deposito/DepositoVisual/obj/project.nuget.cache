@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s7qqnSpu+BmWAXZiYizHWbmJUljKQo/IxotThs4DzZd41pQe9dzuOoZnZV+HK2G/RlnxwFC+YoqpvZ5H0u3k8Q==",
+  "dgSpecHash": "RRh10JTFDvHSK5kZBqVlYUUjDd5IpNpCZhvXNGcfwGDvrfYxdkJ6ct2rsqG/TosbMX0DtbFm/7uJH98rCwV3KA==",
   "success": true,
-  "projectFilePath": "D:\\Git\\Ginepro-Portfolio\\Deposito\\DepositoVisual\\DepositoVisual.csproj",
+  "projectFilePath": "D:\\proyecto practica deposito\\deposito02\\DepositoVisual\\DepositoVisual.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emiliano\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Emiliano\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -71,6 +71,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Deposito2.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <DependentUpon>deposito2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Producto.cs">
       <DependentUpon>deposito2.tt</DependentUpon>
     </Compile>

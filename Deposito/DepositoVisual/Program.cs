@@ -17,7 +17,9 @@ namespace DepositoVisual
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Ventana_Principal());
+            Application.Run(new Login());
         }
     }
+
+  
 }

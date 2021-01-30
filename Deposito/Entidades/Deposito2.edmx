@@ -8,6 +8,7 @@
   <EntityContainer Name="Deposito2StoreContainer">
     <EntitySet Name="Categorias" EntityType="Deposito2.Store.Categorias" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Productos" EntityType="Deposito2.Store.Productos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoginSet" EntityType="Deposito2.Store.LoginSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="CategoriaProducto" Association="Deposito2.Store.CategoriaProducto">
       <End Role="Categoria" EntitySet="Categorias" />
       <End Role="Producto" EntitySet="Productos" />
@@ -30,6 +31,14 @@
     <Property Name="Medida" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Stock" Type="int" Nullable="false" />
     <Property Name="CategoriaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoginSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Clave" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="CategoriaProducto">
     <End Role="Categoria" Type="Deposito2.Store.Categorias" Multiplicity="1" />
@@ -54,13 +63,14 @@
             <End Role="Categoria" EntitySet="Categorias" />
             <End Role="Producto" EntitySet="Productos" />
           </AssociationSet>
+          <EntitySet Name="LoginSet" EntityType="Deposito2.Login" />
         </EntityContainer>
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Rubro" Type="String" Nullable="false" />
+          <Property Name="Rubro" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Producto" Relationship="Deposito2.CategoriaProducto" FromRole="Categoria" ToRole="Producto" />
         </EntityType>
         <EntityType Name="Producto">
@@ -68,9 +78,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" Nullable="false" />
-          <Property Name="Material" Type="String" Nullable="false" />
-          <Property Name="Medida" Type="String" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Material" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Medida" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Stock" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Categoria" Relationship="Deposito2.CategoriaProducto" FromRole="Producto" ToRole="Categoria" />
           <Property Name="CategoriaId" Type="Int32" Nullable="false" />
@@ -87,6 +97,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Usuario" Type="String" Nullable="false" />
+          <Property Name="Clave" Type="String" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -113,6 +131,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="LoginSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Deposito2.Login)">
+        <MappingFragment StoreEntitySet="LoginSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -129,6 +156,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
         <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
